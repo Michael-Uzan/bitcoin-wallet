@@ -1,0 +1,17 @@
+.user-msg {
+    position: fixed;
+    top: -50px;
+    right: 10px;
+    background-color: #111;
+    padding: 10px;
+    &.open {
+        top: 150px;
+        transition: bottom 0.9s;
+    }
+    &.success {
+        background-color: lightgreen;
+    }
+    &.danger {
+        background-color: pink;
+    }
+}

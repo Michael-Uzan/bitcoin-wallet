@@ -52,6 +52,7 @@ async function addMove(contact, amount) {
         at: Date.now(),
         amount,
     });
+    user.coins -= amount
     const updatedUser = await update(user)
     return updatedUser
 }

@@ -1,6 +1,7 @@
 <template>
   <section v-if="contactToEdit" class="contact-details">
-    <h1>Contact Edit</h1>
+    <h1 v-if="isEdit">Contact Edit</h1>
+    <h1 v-else>New Contact</h1>
     <form @submit.prevent="saveContact">
       <input v-model.trim="contactToEdit.name" type="text" placeholder="name" />
       <input
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       contactToEdit: null,
+      isEdit: false,
     };
   },
   created() {
@@ -38,6 +40,7 @@ export default {
         this.contactToEdit = contactId
           ? await contactsService.getById(contactId)
           : await contactsService.getEmptyUser();
+        this.isEdit = contactId ? true : false;
       } catch (err) {
         console.log("error load contact", err);
       }

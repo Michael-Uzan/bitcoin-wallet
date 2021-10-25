@@ -1,9 +1,9 @@
 <template>
   <section class="transfer-list">
-    <h2>Last moves to {{ toName }}</h2>
+    <h2 v-if="!isToUser">Last moves to {{ toName }}</h2>
     <ul class="clean-list">
       <li v-for="move in movesToShow" :key="move.at">
-        <MovePreview :move="move" />
+        <MovePreview :move="move" :isToUser="isToUser" />
       </li>
     </ul>
   </section>
@@ -12,7 +12,7 @@
 <script>
 import MovePreview from "@/components/MovePreview";
 export default {
-  props: ["movesToShow"],
+  props: ["movesToShow", "isToUser"],
   computed: {
     toName() {
       return this.movesToShow[0].to;

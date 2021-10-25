@@ -9,6 +9,7 @@
       />
       <button>Transfer</button>
     </form>
+    <div>Your Current Balance: {{ loggedinUser.coins }} BITs</div>
   </section>
 </template>
 
@@ -27,8 +28,17 @@ export default {
         showUserMsg("incorrect aomunt, try again!", "danger");
         this.amount = null;
         return;
+      } else if (this.amount > this.loggedinUser.coins) {
+        showUserMsg("not enough coins!", "danger");
+        return;
       }
       this.$emit("onTransferCoins", this.amount);
+      this.amount = null;
+    },
+  },
+  computed: {
+    loggedinUser() {
+      return this.$store.getters.loggedinUser;
     },
   },
 };

@@ -12,7 +12,7 @@
     </ul>
     <p>From {{ contact.location }}</p>
     <TransferCoins :contact="contact" @onTransferCoins="onTransferCoins" />
-    <TransferList :movesToShow="movesToShow" />
+    <TransferList v-if="movesToShow.length" :movesToShow="movesToShow" />
   </section>
 </template>
 

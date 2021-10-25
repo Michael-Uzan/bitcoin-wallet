@@ -6,7 +6,8 @@ import ContactDetails from '../views/ContactDetails'
 import ContactEdit from '../views/ContactEdit'
 import Dashboard from '../views/Dashboard'
 import NotFound from '@/views/NotFound'
-
+import Login from '@/views/Login'
+import Signup from '@/views/Signup'
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +15,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    name: 'Signup',
+    component: Signup
   },
   {
     path: '/contacts',

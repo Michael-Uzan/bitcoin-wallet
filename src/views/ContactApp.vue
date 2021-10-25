@@ -1,9 +1,15 @@
 <template>
   <section class="contact-app">
     <h1>Contacts</h1>
-    <RouterLink to="contact/edit/">Add contact</RouterLink>
-    <ContactFilter @setFilter="setFilter" />
-    <ContactsList :contacts="contactsToShow" />
+    <template v-if="loggedinUser">
+      <RouterLink to="contact/edit/">Add contact</RouterLink>
+      <ContactFilter @setFilter="setFilter" />
+      <ContactsList :contacts="contactsToShow" />
+    </template>
+    <template v-else>
+      <h1>Login to see contacts</h1>
+      <router-link to="/login">Login</router-link>
+    </template>
   </section>
 </template>
 
@@ -24,6 +30,9 @@ export default {
     this.contacts = await contactsService.query();
   },
   computed: {
+    loggedinUser() {
+      return this.$store.getters.loggedinUser;
+    },
     contactsToShow() {
       if (!this.filterBy) return this.contacts;
       const contactsToShow = this.contacts.filter((contact) => {

@@ -1,6 +1,6 @@
 <template>
   <section v-if="contact" class="contact-details">
-    <button @click="deleteContact(contact._id)">delete</button>
+    <button @click="deleteContact(contact._id)">Delete</button>
     <RouterLink :to="`/contact/edit/${contact._id}`"> Edit </RouterLink>
     <RouterLink :to="`/contacts/`"> Back </RouterLink>
     <h2>{{ contact.name }}</h2>
@@ -12,6 +12,7 @@
     </ul>
     <p>From {{ contact.location }}</p>
     <TransferCoins :contact="contact" @onTransferCoins="onTransferCoins" />
+    <TransferList :movesToShow="movesToShow" />
   </section>
 </template>
 
@@ -19,6 +20,8 @@
 import { contactsService } from "../services/contacts.service.js";
 import { showUserMsg } from "@/services/eventBus.service";
 import TransferCoins from "@/components/TransferCoins";
+import TransferList from "@/components/TransferList";
+
 export default {
   data() {
     return {
@@ -42,12 +45,26 @@ export default {
       this.$router.push("/contacts");
       showUserMsg("deleted succesfully");
     },
-    onTransferCoins(amount) {
-      console.log("amount", amount);
+    async onTransferCoins(amount) {
+      await this.$store.dispatch({
+        type: "addMove",
+        contact: this.contact,
+        amount,
+      });
+      showUserMsg("Transfer complete succesfully");
+    },
+  },
+  computed: {
+    movesToShow() {
+      const loggedinUser = this.$store.getters.loggedinUser;
+      return loggedinUser.moves.filter(
+        (move) => move.toId === this.contact._id
+      );
     },
   },
   components: {
     TransferCoins,
+    TransferList,
   },
 };
 </script>

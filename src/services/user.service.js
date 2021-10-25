@@ -14,6 +14,7 @@ export const userService = {
     getById,
     remove,
     update,
+    addMove
 }
 
 window.userService = userService
@@ -41,6 +42,18 @@ async function update(user) {
     // Handle case in which admin updates other user's details
     if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
     return user;
+}
+
+async function addMove(contact, amount) {
+    const user = getLoggedinUser()
+    user.moves.unshift({
+        toId: contact._id,
+        to: contact.name,
+        at: Date.now(),
+        amount,
+    });
+    const updatedUser = await update(user)
+    return updatedUser
 }
 
 async function login(userCred) {

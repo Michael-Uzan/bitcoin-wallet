@@ -32,7 +32,7 @@ export default {
       if (this.$store.getters.loggedinUser) this.$router.push("/");
       else {
         this.creds = { email: "", passwords: "" };
-        showUserMsg("bad login - incorrect username or password", "danger");
+        showUserMsg("bad login - incorrect username or password!", "danger");
       }
     },
   },

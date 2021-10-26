@@ -1,31 +1,45 @@
 <template>
   <section class="dasboard">
     <h1>Dashboard</h1>
-    <h3>Market Price over time (USD)</h3>
-    <LineBarTradeVolume :chartData="chartData" />
-    <p>Average USD market price across major bitcoin exchanges.</p>
+    <div>
+      <h3>Market Price over time (USD)</h3>
+      <ChartLineMatketPrice :chartData="chartDataMarket" />
+      <p>Average USD market price across major bitcoin exchanges.</p>
+    </div>
+    <div>
+      <h3>Trade Volume (USD)</h3>
+      <ChartBarTradeVolume :chartData="chartDataTrade" />
+      <p>The total USD value of trading volume on major bitcoin exchanges.</p>
+    </div>
   </section>
 </template>
 
 <script>
-import LineBarTradeVolume from "../components/LineBarTradeVolume.vue";
+import ChartLineMatketPrice from "../components/ChartLineMatketPrice.vue";
+import ChartBarTradeVolume from "../components/ChartBarTradeVolume";
 import { bitcoinService } from "@/services/bitcoin.service.js";
 export default {
   data() {
     return {
-      chartData: null,
+      chartDataMarket: null,
+      chartDataTrade: null,
     };
   },
   created() {
-    this.getChartData();
+    this.getChartDataMarket();
+    this.getChartDataTrade();
   },
   methods: {
-    async getChartData() {
-      this.chartData = await bitcoinService.getMarketPrice();
+    async getChartDataMarket() {
+      this.chartDataMarket = await bitcoinService.getMarketPrice();
+    },
+    async getChartDataTrade() {
+      this.chartDataTrade = await bitcoinService.getTradeVolume();
     },
   },
   components: {
-    LineBarTradeVolume,
+    ChartLineMatketPrice,
+    ChartBarTradeVolume,
   },
 };
 </script>

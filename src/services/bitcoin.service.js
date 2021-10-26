@@ -3,25 +3,34 @@ import axios from 'axios';
 import { storageService } from '@/services/storage.service.js'
 export const bitcoinService = {
     getBitcoinRate,
-    getMarketPrice
+    getMarketPrice,
+    getTradeVolume
 }
-const BITCOIN_RATE_DB = 'bitcoinRateDB'
-const BITCOIN_RATE_URL = `https://blockchain.info/tobtc?currency=USD&value=1`
+const BITCOIN_RATE_DB = 'bitcoinRateDB';
+const BITCOIN_RATE_URL = `https://blockchain.info/tobtc?currency=USD&value=1`;
+const MARKET_PRICE_DB = 'marketPriceDB';
 const MARKET_PRICE_URL = 'https://api.blockchain.info/charts/market-price?timespan=1months&format=json&cors=true';
-const MARKET_PRICE_DB = 'marketPriceDB'
+const TRADE_VOLUME_DB = 'tradeVolumeDB';
+const TRADE_VOLUME_URL = 'https://api.blockchain.info/charts/trade-volume?timespan=1months&format=json&cors=true';
 
 async function getBitcoinRate() {
-    // API Blocking:
-    let res = storageService.loadFromStorage(BITCOIN_RATE_DB)
-    if (!res?.data) res = await axios.get(BITCOIN_RATE_URL)
-    storageService.storeToStorage(BITCOIN_RATE_DB, res)
+    const res = await _get(BITCOIN_RATE_DB, BITCOIN_RATE_URL)
     return res.data
 }
 
 async function getMarketPrice() {
-    // return $ to btc rate
-    let res = storageService.loadFromStorage(MARKET_PRICE_DB)
-    if (!res?.data) res = await axios.get(MARKET_PRICE_URL);
-    storageService.storeToStorage(MARKET_PRICE_DB, res)
+    const res = await _get(MARKET_PRICE_DB, MARKET_PRICE_URL)
     return res.data.values
+}
+
+async function getTradeVolume() {
+    const res = await _get(TRADE_VOLUME_DB, TRADE_VOLUME_URL)
+    return res.data.values
+}
+
+async function _get(KEY_DB, API_URL) {
+    let res = storageService.loadFromStorage(KEY_DB)
+    if (!res?.data) res = await axios.get(API_URL);
+    storageService.storeToStorage(KEY_DB, res)
+    return res
 }

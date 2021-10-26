@@ -1,9 +1,9 @@
 <script>
-import { Line } from "vue-chartjs";
+import { Bar } from "vue-chartjs";
 
 export default {
-  extends: Line,
-  mounted() {},
+  props: ["chartData"],
+  extends: Bar,
   methods: {
     chartRender() {
       if (!this.chartData) return;
@@ -14,9 +14,9 @@ export default {
             {
               label: "$",
               data: this.getChartValues,
-              backgroundColor: "transparent",
-              borderColor: "rgba(1, 116, 188, 0.50)",
-              pointBackgroundColor: "rgba(171, 71, 188, 1)",
+              borderColor: "#f50057",
+              backgroundColor: "#f50057",
+              borderWidth: 1,
             },
           ],
         },
@@ -43,7 +43,6 @@ export default {
       return this.chartData.map((data) => data.y);
     },
   },
-  props: ["chartData"],
   watch: {
     chartData: function () {
       this.chartRender();

@@ -2,9 +2,12 @@
   <section class="home">
     <template v-if="loggedinUser">
       <h1>Hello {{ loggedinUser.name }} !</h1>
-      <h2>coins: {{ loggedinUser.coins }}</h2>
+      <h2>
+        Your Balance: {{ loggedinUser.coins }} BIT (
+        {{ coinsConvertedToDollar }} $)
+      </h2>
     </template>
-    <h4>Bitcoin rate: {{ bitCoinRate }}</h4>
+    <h4>Current Bitcoin rate: 1 $ = {{ bitCoinRate }} ₿</h4>
     <h2 v-if="loggedinUser">Last transfers</h2>
     <TransferList
       v-if="loggedinUser && loggedinUser.moves.length"
@@ -32,6 +35,12 @@ export default {
     },
     movesToShow() {
       return this.loggedinUser.moves.slice(0, 5);
+    },
+    coinsConvertedToDollar() {
+      return (this.loggedinUser.coins / this.bitCoinRate).toLocaleString(
+        "en-GB",
+        { maximumFractionDigits: 2 }
+      );
     },
   },
   components: {

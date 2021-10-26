@@ -9,6 +9,8 @@
     <ul>
       <li>Email: {{ contact.email }}</li>
       <li>Phone: {{ contact.phone }}</li>
+      <li>Age: {{ contact.age }}</li>
+      <li>Gender: {{ contact.gender }}</li>
     </ul>
     <p>From {{ contact.location }}</p>
     <TransferCoins :contact="contact" @onTransferCoins="onTransferCoins" />

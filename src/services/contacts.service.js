@@ -25,7 +25,9 @@ async function query() {
                 email: contact.email,
                 phone: contact.phone,
                 avatar: contact.picture.large,
-                location: `${contact.location.country}, ${contact.location.city}`
+                location: `${contact.location.country}, ${contact.location.city}`,
+                gender: contact.gender,
+                age: contact.dob.age
             }
         ))
         storageService.storeToStorage(STORAGE_KEY, contacts)

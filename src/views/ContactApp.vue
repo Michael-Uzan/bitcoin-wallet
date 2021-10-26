@@ -35,11 +35,12 @@ export default {
     },
     contactsToShow() {
       if (!this.filterBy) return this.contacts;
+      const regex = new RegExp(this.filterBy.searchStr, "i");
       const contactsToShow = this.contacts.filter((contact) => {
-        const scarchKey = this.filterBy.searchStr.toLowerCase();
         return (
-          contact.name.toLowerCase().includes(scarchKey) ||
-          contact.location.toLowerCase().includes(scarchKey)
+          regex.test(contact.name) ||
+          regex.test(contact.location) ||
+          regex.test(contact.email)
         );
       });
       return contactsToShow;

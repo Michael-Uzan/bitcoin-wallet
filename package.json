@@ -2,7 +2,7 @@
   "name": "bitcoins",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Michael-Uzan.github.io/bitcoin-wallet/",
+  "homepage": "https://Michael-Uzan.github.io/bitcoin-wallet",
   "scripts": {
     "serve": "vue-cli-service serve",
     "start": "vue-cli-service serve",

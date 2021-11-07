@@ -16,6 +16,7 @@ You can transfer money to your friends and play the lottery to earn more Bitcoin
 
   <h3>Technologies:</h3>
  
+ - Vue Framework
  - State management with Store - Vuex
  - Ajax / API calls
  - Async methodes

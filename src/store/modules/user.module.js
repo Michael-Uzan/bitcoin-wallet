@@ -23,12 +23,18 @@ export default {
             const user = await userService.signup(creds);
             commit({ type: 'setLoggedinUser', user });
         },
+        async signupAsGuest({ commit }) {
+            const guestCreds = { name: "guest", email: "guest@example.com", password: "guest" }
+            let user = await userService.login(guestCreds);
+            if (!user) user = await userService.signup(guestCreds);
+            commit({ type: 'setLoggedinUser', user });
+        },
         async saveUser({ commit }, { user }) {
             const updatedUser = await userService.update(user);
             commit({ type: 'setLoggedinUser', user: updatedUser });
         },
-        async addMove({ commit }, { contact, amount }) {
-            const updatedUser = await userService.addMove(contact, amount);
+        async addMove({ commit }, { amount, contact }) {
+            const updatedUser = await userService.addMove(amount, contact);
             commit({ type: 'setLoggedinUser', user: updatedUser });
         },
         async login({ commit }, { creds }) {

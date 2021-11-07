@@ -5,6 +5,7 @@
         type="number"
         :placeholder="`Transfer to ${contact.name}`"
         v-model.number="amount"
+        min="0.1"
         required
       />
       <button>Transfer</button>
@@ -24,11 +25,7 @@ export default {
   props: ["contact"],
   methods: {
     onTransferCoins() {
-      if (this.amount <= 0) {
-        showUserMsg("incorrect aomunt, try again!", "danger");
-        this.amount = null;
-        return;
-      } else if (this.amount > this.loggedinUser.coins) {
+      if (this.amount > this.loggedinUser.coins) {
         showUserMsg("not enough coins!", "danger");
         return;
       }

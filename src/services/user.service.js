@@ -14,7 +14,7 @@ export const userService = {
     getById,
     remove,
     update,
-    addMove
+    addMove,
 }
 
 window.userService = userService
@@ -44,22 +44,33 @@ async function update(user) {
     return user;
 }
 
-async function addMove(contact, amount) {
+async function addMove(amount, contact = null) {
     const user = getLoggedinUser()
-    user.moves.unshift({
-        toId: contact._id,
-        to: contact.name,
-        at: Date.now(),
-        amount,
-    });
-    user.coins -= amount
+    if (contact) {
+        user.moves.unshift({
+            toId: contact._id,
+            to: contact.name,
+            at: Date.now(),
+            amount,
+        });
+        user.coins -= amount
+    } else {
+        user.lotteryMoves.unshift({
+            at: Date.now(),
+            amount,
+        });
+        user.coins += amount
+    }
     const updatedUser = await update(user)
     return updatedUser
 }
 
+
 async function login(userCred) {
     const users = await asyncStorageService.query(STORAGE_KEY_USERS)
-    const user = users.find(user => user.password === userCred.password)
+    const user = users.find(user => {
+        return ((user.password === userCred.password) && (user.email === userCred.email))
+    })
     return _saveLocalUser(user)
 
     // const user = await httpService.post('auth/login', userCred)
@@ -69,6 +80,7 @@ async function login(userCred) {
 async function signup(userCred) {
     userCred.coins = 100;
     userCred.moves = [];
+    userCred.lotteryMoves = [];
     const user = await asyncStorageService.post(STORAGE_KEY_USERS, userCred)
     // const user = await httpService.post('auth/signup', userCred)
     // socketService.emit('set-user-socket', user._id);

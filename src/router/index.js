@@ -8,6 +8,8 @@ import Dashboard from '../views/Dashboard'
 import NotFound from '@/views/NotFound'
 import Login from '@/views/Login'
 import Signup from '@/views/Signup'
+import Lottery from '@/views/Lottery'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,6 +27,11 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: Signup
+  },
+  {
+    path: '/lottery',
+    name: 'Lottery',
+    component: Lottery
   },
   {
     path: '/contacts',

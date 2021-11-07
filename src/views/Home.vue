@@ -28,6 +28,9 @@ export default {
   },
   async created() {
     this.bitCoinRate = await bitcoinService.getBitcoinRate();
+    if (!this.loggedinUser) {
+      await this.$store.dispatch({ type: "signupAsGuest" });
+    }
   },
   computed: {
     loggedinUser() {

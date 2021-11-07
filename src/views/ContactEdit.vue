@@ -1,7 +1,9 @@
 <template>
   <section v-if="contactToEdit" class="contact-details">
+    <RouterLink :to="`/contact/${contactToEdit._id}`">Back</RouterLink>
     <h1 v-if="isEdit">Contact Edit</h1>
     <h1 v-else>New Contact</h1>
+    <img :src="contactToEdit.avatar" />
     <form @submit.prevent="saveContact">
       <input v-model.trim="contactToEdit.name" type="text" placeholder="name" />
       <input

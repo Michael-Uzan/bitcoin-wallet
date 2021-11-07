@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/contacts">Contacts</router-link> |
+      <router-link to="/lottery">Lottery</router-link> |
       <router-link to="/dashboard">Dashboard</router-link> |
       <template v-if="loggedinUser">
         <span>{{ loggedinUser.name }}</span> |

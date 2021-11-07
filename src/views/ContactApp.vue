@@ -1,8 +1,8 @@
 <template>
   <section class="contact-app">
-    <h1>Contacts</h1>
+    <h1>Contacts ({{ contactsCount }} contacts)</h1>
     <template v-if="loggedinUser">
-      <RouterLink to="contact/edit/">Add contact</RouterLink>
+      <RouterLink to="/contact/edit/">Add contact</RouterLink>
       <ContactFilter @setFilter="setFilter" />
       <ContactsList :contacts="contactsToShow" />
     </template>
@@ -30,6 +30,9 @@ export default {
     this.contacts = await contactsService.query();
   },
   computed: {
+    contactsCount() {
+      return this.contacts.length;
+    },
     loggedinUser() {
       return this.$store.getters.loggedinUser;
     },

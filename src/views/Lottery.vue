@@ -11,15 +11,16 @@
           v-model.number="amount"
           id="amount"
           min="0.1"
-          :disabled="isGameStarted"
+          :disabled="isGameStarted || !loggedinUser"
           required
         />
       </div>
     </div>
     <span> Your Lucky number: {{ chosenNum }} </span>
-    <button :disabled="isGameStarted" @click="startLottery">
+    <button :disabled="isGameStarted || !loggedinUser" @click="startLottery">
       Start playing
     </button>
+    <router-link to="/login" v-if="!loggedinUser">* login to play</router-link>
     <LotteryNums
       v-if="isGameStarted"
       :winningNums="winningNums"

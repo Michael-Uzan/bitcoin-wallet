@@ -2,16 +2,20 @@
   "name": "bitcoins",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://michael-uzan.github.io/bitcoin-wallet",
   "scripts": {
     "serve": "vue-cli-service serve",
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^0.23.0",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
+    "gh-pages": "^2.0.1",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
     "vue-router": "^3.2.0",

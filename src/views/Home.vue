@@ -3,8 +3,7 @@
     <template v-if="loggedinUser">
       <h1>Hello {{ loggedinUser.name }} !</h1>
       <h2>
-        Your Balance: {{ loggedinUser.coins }} BIT (
-        {{ coinsConvertedToDollar }} $)
+        Your Balance: {{ userBalance }} ₿ ( {{ coinsConvertedToDollar }} $)
       </h2>
     </template>
     <h4>Current Bitcoin rate: 1 $ = {{ bitCoinRate }} ₿</h4>
@@ -44,6 +43,11 @@ export default {
         "en-GB",
         { maximumFractionDigits: 2 }
       );
+    },
+    userBalance() {
+      return this.loggedinUser.coins.toLocaleString("en-GB", {
+        maximumFractionDigits: 2,
+      });
     },
   },
   components: {

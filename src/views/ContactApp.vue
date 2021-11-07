@@ -1,6 +1,8 @@
 <template>
   <section class="contact-app">
-    <h1>Contacts ({{ contactsCount }} contacts)</h1>
+    <h1>
+      Contacts <span v-if="loggedinUser">({{ contactsCount }} contacts)</span>
+    </h1>
     <template v-if="loggedinUser">
       <RouterLink to="/contact/edit/">Add contact</RouterLink>
       <ContactFilter @setFilter="setFilter" />

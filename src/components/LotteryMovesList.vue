@@ -6,10 +6,6 @@
       :key="idx"
     >
     </LotteryMovePreview>
-    <pre>
-    {{ lotteryMovesToShow }}
-      </pre
-    >
   </section>
 </template>
 

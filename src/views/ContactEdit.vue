@@ -1,7 +1,7 @@
 <template>
   <section class="contact-details">
     <template v-if="contactToEdit">
-      <RouterLink :to="`/contact/${contactToEdit._id}`">Back</RouterLink>
+      <RouterLink :to="`/contacts/`">Back</RouterLink>
       <h1 v-if="isEdit">Contact Edit</h1>
       <h1 v-else>New Contact</h1>
       <img :src="contactToEdit.avatar" />

@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="main-footer full">
     <div class="footer-logo flex direction-col align-center">
       <p>&copy; BitCoin Wallet by Michael Uzan</p>
       <img src="../assets/img/logo-spinning.gif" />
@@ -22,7 +22,6 @@
         </li>
       </ul>
     </div>
-    <div class="bottom-footer"></div>
   </footer>
 </template>
 

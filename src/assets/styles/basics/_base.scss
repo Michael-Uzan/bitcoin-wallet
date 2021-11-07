@@ -4,15 +4,16 @@
 
 body {
     margin: 0;
+    background-color: $bgcColor;
 }
 
 html,
 input,
 select,
 textarea {
-    font-family: SourceSansPro-Black, sans-serif;
+    font-family: OpenSans-Regular, CreteRound-Regular, sans-serif;
     color: $fontColor;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 img {
@@ -38,11 +39,11 @@ a {
 }
 
 ::selection {
-    // color: $clr7;
+    color: $clr4;
+    background-color: $clr5;
 }
 
 input:focus-visible,
 textarea:focus-visible {
     outline: -webkit-focus-ring-color auto 0px;
 }
-

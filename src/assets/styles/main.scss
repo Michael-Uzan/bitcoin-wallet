@@ -1,17 +1,18 @@
 // Setup
-// @import "setup/variables.scss";
-// @import "setup/functions.scss";
-// @import "setup/mixins.scss";
-// @import "setup/typography.scss";
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
 
 // Basics
 @import "basics/helpers";
-// @import "basics/layout.scss";
-// @import "basics/base.scss";
-// @import "basics/buttons.scss";
+@import "basics/layout";
+@import "basics/base";
+@import "basics/buttons";
 
 // Components
 @import "cmps/appHeader";
+@import "cmps/appFotter";
 @import "cmps/userMsg";
 @import "cmps/lottery/lottery-nums";
 // @import "cmps/loading";

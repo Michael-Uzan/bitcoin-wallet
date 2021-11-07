@@ -1,20 +1,33 @@
-// @font-face {
-//     font-family: SourceSansPro-Black;
-//     src: url(../../../assets/fonts/SourceSansPro-Black.ttf);
-// }
-// @font-face {
-//     font-family: SourceSansPro-Bold;
-//     src: url(../../../assets/fonts/SourceSansPro-Bold.ttf);
-// }
-// @font-face {
-//     font-family: SourceSansPro-Semi;
-//     src: url(../../../assets/fonts/SourceSansPro-SemiBold.ttf);
-// }
-// @font-face {
-//     font-family: SourceSansPro-Reg;
-//     src: url(../../../assets/fonts/SourceSansPro-Regular.ttf);
-// }
-// @font-face {
-//     font-family: SourceSansPro-Light;
-//     src: url(../../../assets/fonts/SourceSansPro-Light.ttf);
-// }
+// OpenSans
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url("~@/assets/fonts/OpenSans/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url("~@/assets/fonts/OpenSans/OpenSans-Bold.ttf");
+}
+@font-face {
+    font-family: OpenSans-Light;
+    src: url("~@/assets/fonts/OpenSans/OpenSans-Light.ttf");
+}
+@font-face {
+    font-family: OpenSans-Italic;
+    src: url("~@/assets/fonts/OpenSans/OpenSans-Italic.ttf");
+}
+
+// CreteRound
+@font-face {
+    font-family: CreteRound-Regular;
+    src: url("~@/assets/fonts/CreteRound/CreteRound-Regular.ttf");
+}
+@font-face {
+    font-family: CreteRound-Italic;
+    src: url("~@/assets/fonts/CreteRound/CreteRound-Italic.ttf");
+}
+
+// MochiyPopPOne
+@font-face {
+    font-family: MochiyPopPOne;
+    src: url("~@/assets/fonts/MochiyPopPOne/MochiyPopPOne-Regular.ttf");
+}

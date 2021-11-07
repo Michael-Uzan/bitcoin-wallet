@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="main-container">
     <UserMsg />
     <AppHeader />
     <router-view />

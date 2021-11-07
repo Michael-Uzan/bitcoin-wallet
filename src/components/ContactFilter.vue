@@ -2,7 +2,7 @@
   <form>
     <input
       @input="filter"
-      type="text"
+      type="search"
       placeholder="Search contact"
       v-model="filterBy.searchStr"
     />

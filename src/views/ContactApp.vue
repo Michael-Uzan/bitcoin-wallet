@@ -7,6 +7,7 @@
       <RouterLink to="/contact/edit/">Add contact</RouterLink>
       <ContactFilter @setFilter="setFilter" />
       <ContactsList :contacts="contactsToShow" />
+      <h2 v-if="!contactsToShow.length">Sorry, no result for your Search...</h2>
     </template>
     <template v-else>
       <h1>Login to see contacts</h1>

@@ -9,6 +9,8 @@ import NotFound from '@/views/NotFound'
 import Login from '@/views/Login'
 import Signup from '@/views/Signup'
 import Lottery from '@/views/Lottery'
+import UserEdit from '@/views/UserEdit'
+import UserDetails from '@/views/UserDetails'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,16 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: Signup
+  },
+  {
+    path: '/user/edit/:userId?',
+    name: 'UserEdit',
+    component: UserEdit
+  },
+  {
+    path: '/user/:userId?',
+    name: 'UserDetails',
+    component: UserDetails
   },
   {
     path: '/lottery',

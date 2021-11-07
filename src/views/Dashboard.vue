@@ -18,6 +18,7 @@
 import ChartLineMatketPrice from "../components/ChartLineMatketPrice.vue";
 import ChartBarTradeVolume from "../components/ChartBarTradeVolume";
 import { bitcoinService } from "@/services/bitcoin.service.js";
+
 export default {
   data() {
     return {

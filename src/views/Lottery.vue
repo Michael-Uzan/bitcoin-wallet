@@ -77,7 +77,7 @@ export default {
       await this.$store.dispatch({
         type: "addMove",
         contact: null,
-        amount: this.amount,
+        amount: this.isWin ? this.amount : -this.amount,
       });
     },
     onShowGameModal() {

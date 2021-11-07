@@ -1,20 +1,25 @@
 <template>
-  <section v-if="contact" class="contact-details">
-    <button @click="deleteContact(contact._id)">Delete</button>
-    <RouterLink :to="`/contact/edit/${contact._id}`"> Edit </RouterLink>
-    <RouterLink :to="`/contacts/`"> Back </RouterLink>
-    <h2>{{ contact.name }}</h2>
-    <img :src="contact.avatar" />
-    <h4>Contact:</h4>
-    <ul>
-      <li>Email: {{ contact.email }}</li>
-      <li>Phone: {{ contact.phone }}</li>
-      <li>Age: {{ contact.age }}</li>
-      <li>Gender: {{ contact.gender }}</li>
-    </ul>
-    <p>From {{ contact.location }}</p>
-    <TransferCoins :contact="contact" @onTransferCoins="onTransferCoins" />
-    <TransferList v-if="movesToShow.length" :movesToShow="movesToShow" />
+  <section class="contact-details">
+    <template v-if="contact">
+      <button @click="deleteContact(contact._id)">Delete</button>
+      <RouterLink :to="`/contact/edit/${contact._id}`"> Edit </RouterLink>
+      <RouterLink :to="`/contacts/`"> Back </RouterLink>
+      <h2>{{ contact.name }}</h2>
+      <img :src="contact.avatar" />
+      <h4>Contact:</h4>
+      <ul>
+        <li>Email: {{ contact.email }}</li>
+        <li>Phone: {{ contact.phone }}</li>
+        <li>Age: {{ contact.age }}</li>
+        <li>Gender: {{ contact.gender }}</li>
+      </ul>
+      <p>From {{ contact.location }}</p>
+      <TransferCoins :contact="contact" @onTransferCoins="onTransferCoins" />
+      <TransferList v-if="movesToShow.length" :movesToShow="movesToShow" />
+    </template>
+    <template v-else>
+      <Loading></Loading>
+    </template>
   </section>
 </template>
 
@@ -23,6 +28,7 @@ import { contactsService } from "../services/contacts.service.js";
 import { showUserMsg } from "@/services/eventBus.service";
 import TransferCoins from "@/components/TransferCoins";
 import TransferList from "@/components/TransferList";
+import Loading from "@/components/Loading";
 
 export default {
   data() {
@@ -67,6 +73,7 @@ export default {
   components: {
     TransferCoins,
     TransferList,
+    Loading,
   },
 };
 </script>

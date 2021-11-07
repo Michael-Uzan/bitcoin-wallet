@@ -6,7 +6,10 @@
       <router-link to="/lottery">Lottery</router-link> |
       <router-link to="/dashboard">Dashboard</router-link> |
       <template v-if="loggedinUser">
-        <span>{{ loggedinUser.name }}</span> |
+        <router-link :to="`/user/${loggedinUser._id}`">{{
+          loggedinUser.name
+        }}</router-link>
+        |
         <button @click="logout">Logout</button>
       </template>
       <router-link v-else to="/login">Login</router-link> |

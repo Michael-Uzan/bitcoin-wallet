@@ -15,7 +15,7 @@ export default {
         },
     },
     actions: {
-        async loadUser({ commit }) { //maybe delete async
+        loadUser({ commit }) {
             const user = userService.getLoggedinUser();
             if (user) commit({ type: 'setLoggedinUser', user });
         },

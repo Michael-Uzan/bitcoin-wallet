@@ -78,14 +78,37 @@ async function login(userCred) {
     // if (user) return _saveLocalUser(user)
 }
 async function signup(userCred) {
-    userCred.coins = 100;
-    userCred.moves = [];
-    userCred.lotteryMoves = [];
+    userCred = _createDummyData(userCred)
     const user = await asyncStorageService.post(STORAGE_KEY_USERS, userCred)
     // const user = await httpService.post('auth/signup', userCred)
     // socketService.emit('set-user-socket', user._id);
     return _saveLocalUser(user)
 }
+
+function _createDummyData(userCred) {
+    userCred.coins = 100;
+    userCred.moves = [
+        {
+            toId: 'dsfsf4th54yh67i45eghdf6',
+            to: 'David',
+            at: (Date.now() - 20058965),
+            amount: 2.5,
+        },
+        {
+            toId: 'dsf809j3e4i5980g7i45eghdf6',
+            to: 'Ranji',
+            at: (Date.now() - 53672365),
+            amount: 8,
+        }
+    ];
+    userCred.lotteryMoves = [
+        { at: Date.now(), amount: 5 },
+        { at: (Date.now() - 5000000), amount: -2 },
+        { at: (Date.now() - 346200), amount: -3 }
+    ]
+    return userCred
+}
+
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     // socketService.emit('unset-user-socket');

@@ -39,6 +39,7 @@
       :isWin="isWin"
       :amount="amount"
       @onRestartGame="restartGame"
+      :loggedinUserBalance="loggedinUser.coins"
     />
   </section>
 </template>

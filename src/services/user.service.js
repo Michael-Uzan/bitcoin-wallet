@@ -90,15 +90,15 @@ function _createDummyData(userCred) {
     userCred.moves = [
         {
             toId: 'dsfsf4th54yh67i45eghdf6',
-            to: 'David',
+            to: 'David Santana',
             at: (Date.now() - 20058965),
-            amount: 2.5,
+            amount: 0.4,
         },
         {
             toId: 'dsf809j3e4i5980g7i45eghdf6',
-            to: 'Ranji',
+            to: 'Dj Ranji',
             at: (Date.now() - 53672365),
-            amount: 8,
+            amount: 0.28,
         }
     ];
     userCred.lotteryMoves = [

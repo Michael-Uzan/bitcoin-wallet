@@ -1,0 +1,22 @@
+.home {
+    .balance-details {
+        h5,
+        h4,
+        p {
+            margin: 0;
+        }
+        .user-balance {
+            color: $clr6;
+        }
+    }
+    .transfer-details,
+    .lottery-trasfer-details,
+    .balance-details,
+    img {
+        margin-bottom: 35px;
+    }
+    img {
+        max-width: 450px;
+        border-radius: 15px;
+    }
+}

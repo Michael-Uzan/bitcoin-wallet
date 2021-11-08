@@ -1,9 +1,9 @@
 <template>
   <header class="main-header align-center full" :class="menuOpen">
-    <div class="flex align-center">
+    <router-link to="/" class="flex align-center pointer">
       <img src="../assets/img/logo.jpg" />
       <h1>BitCoin Wallet</h1>
-    </div>
+    </router-link>
     <div class="screen" @click="onToggleModal"></div>
     <nav class="flex align-center">
       <router-link to="/"> <div @click="onToggleModal">Home</div></router-link>

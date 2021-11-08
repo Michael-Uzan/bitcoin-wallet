@@ -1,0 +1,16 @@
+.move-preview {
+    h4 {
+        margin: 0;
+        color: $fontColor;
+        span {
+            color: $clr6;
+        }
+    }
+    h4,
+    h5 {
+        color: $fontColor2;
+    }
+    .to {
+        color: $fontColor;
+    }
+}

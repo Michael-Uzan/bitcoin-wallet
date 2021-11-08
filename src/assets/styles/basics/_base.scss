@@ -38,6 +38,12 @@ a {
     }
 }
 
+hr {
+    height: 1px;
+    background-color: $hrColor;
+    border: none;
+}
+
 ::selection {
     color: $clr4;
     background-color: $clr5;

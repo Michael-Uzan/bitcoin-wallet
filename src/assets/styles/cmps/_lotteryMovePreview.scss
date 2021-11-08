@@ -1,0 +1,15 @@
+.lottery-move-preview {
+    h4 {
+        margin: 0;
+        :first-child {
+            color: $fontColor;
+        }
+        :last-child {
+            color: $clr6;
+        }
+    }
+    h5,
+    h4 {
+        color: $fontColor2;
+    }
+}

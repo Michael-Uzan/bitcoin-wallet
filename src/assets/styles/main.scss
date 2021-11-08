@@ -14,8 +14,10 @@
 @import "cmps/appHeader";
 @import "cmps/appFotter";
 @import "cmps/userMsg";
+@import "cmps/movePreview";
+@import "cmps/lotteryMovePreview";
 @import "cmps/lottery/lottery-nums";
 // @import "cmps/loading";
 
 // Views (pages)
-// @import "pages/LoginSignup";
+@import "views/home";

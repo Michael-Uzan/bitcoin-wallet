@@ -37,6 +37,7 @@
 <script>
 import { contactsService } from "../services/contacts.service.js";
 import Loading from "@/components/Loading";
+import { showUserMsg } from "@/services/eventBus.service";
 
 export default {
   name: "ContactEdit",
@@ -63,9 +64,10 @@ export default {
     },
     async saveContact() {
       try {
-        console.log("contactToEdit", this.contactToEdit);
         await contactsService.save(this.contactToEdit);
+        showUserMsg("Cobtact saved!");
       } catch (err) {
+        showUserMsg("Cant save contact!", "danger");
         console.log("error saving contact ", err);
       }
     },

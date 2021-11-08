@@ -20,7 +20,7 @@
         height: 150px;
         object-fit: fill;
         border-radius: 50%;
-        outline: 2px solid $clr2;
+        border: 2px solid $clr2;
         margin-bottom: 25px;
     }
     form {
@@ -39,7 +39,7 @@
         img {
             width: 250px;
             height: 250px;
-            outline: 4px solid $clr2;
+            border: 4px solid $clr2;
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
   <section class="user-msg" :class="userMsgClass">
-    <h6>{{ msg && msg.txt }}</h6>
+    <h3>{{ msg && msg.txt }}</h3>
   </section>
 </template>
 

@@ -1,0 +1,52 @@
+.contact-preview {
+    img {
+        width: 50px;
+        height: 50px;
+        object-fit: fill;
+        border-radius: 50%;
+        margin-right: 25px;
+        margin-left: 25px;
+        outline: 2px solid $clr2;
+    }
+    h3 {
+        margin: 0;
+        font-size: rem(16px);
+    }
+    h4 {
+        color: $fontColor2;
+        margin: 0;
+        font-size: rem(10px);
+    }
+
+    @include for-narrow-layout {
+        h3 {
+            font-size: rem(20px);
+        }
+        h4 {
+            font-size: rem(16px);
+        }
+        img {
+            width: 85px;
+            height: 85px;
+            outline: 4px solid $clr2;
+        }
+    }
+
+    @include for-normal-layout {
+        h3 {
+            font-size: rem(22px);
+        }
+        h4 {
+            font-size: rem(18px);
+        }
+    }
+
+    // @media (max-width: $mobile-breakpoint) {
+    //     h3 {
+    //         font-size: rem(22px);
+    //     }
+    //     h4 {
+    //         font-size: rem(18px);
+    //     }
+    // }
+}

@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="clean-list">
     <li v-for="contact in contacts" :key="contact._id">
       <ContactPreview :contact="contact" />
     </li>

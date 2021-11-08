@@ -1,28 +1,32 @@
 <template>
-  <section class="contact-details">
-    <template v-if="contactToEdit">
+  <section class="contact-edit">
+    <div class="btn-nav flex space-between">
       <RouterLink :to="`/contacts/`">Back</RouterLink>
+    </div>
+    <template v-if="contactToEdit">
       <h1 v-if="isEdit">Contact Edit</h1>
       <h1 v-else>New Contact</h1>
-      <img :src="contactToEdit.avatar" />
-      <form @submit.prevent="saveContact">
-        <input
-          v-model.trim="contactToEdit.name"
-          type="text"
-          placeholder="name"
-        />
-        <input
-          v-model.trim="contactToEdit.phone"
-          type="text"
-          placeholder="phone"
-        />
-        <input
-          v-model.trim="contactToEdit.email"
-          type="text"
-          placeholder="email"
-        />
-        <button>Save!</button>
-      </form>
+      <section class="flex align-center direction-col">
+        <img :src="contactToEdit.avatar" />
+        <form @submit.prevent="saveContact" class="flex direction-col">
+          <input
+            v-model.trim="contactToEdit.name"
+            type="text"
+            placeholder="name"
+          />
+          <input
+            v-model.trim="contactToEdit.phone"
+            type="text"
+            placeholder="phone"
+          />
+          <input
+            v-model.trim="contactToEdit.email"
+            type="text"
+            placeholder="email"
+          />
+          <button>Save</button>
+        </form>
+      </section>
     </template>
     <template v-else>
       <Loading></Loading>

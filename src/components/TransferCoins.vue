@@ -1,11 +1,12 @@
 <template>
-  <section class="transfer-coins">
-    <form @submit.prevent="onTransferCoins">
+  <section class="transfer-coins flex align-center direction-col">
+    <form class="flex direction-row" @submit.prevent="onTransferCoins">
       <input
         type="number"
         :placeholder="`Transfer to ${contact.name}`"
         v-model.number="amount"
         min="0.1"
+        step="0.1"
         required
       />
       <button>Transfer</button>

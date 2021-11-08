@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <RouterLink :to="`/contact/${contact._id}`">
+  <section class="contact-preview">
+    <RouterLink class="flex align-center" :to="`/contact/${contact._id}`">
       <img :src="contact.avatar" />
       <div>
         <h3>{{ contact.name }}</h3>
@@ -8,6 +8,7 @@
         <h4>{{ contact.location }}</h4>
       </div>
     </RouterLink>
+    <hr />
   </section>
 </template>
 

@@ -1,0 +1,10 @@
+.contact-filter {
+    display: grid;
+    place-content: center;
+    margin-bottom: 35px;
+    @include for-normal-layout {
+        input {
+            width: 350px;
+        }
+    }
+}

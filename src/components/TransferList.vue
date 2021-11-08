@@ -1,6 +1,6 @@
 <template>
   <section class="transfer-list">
-    <h2 v-if="!isToUser">Last moves to {{ toName }}</h2>
+    <h4 v-if="!isToUser" class="tac">Last moves to {{ toName }}</h4>
     <ul class="clean-list">
       <li v-for="move in movesToShow" :key="move.at">
         <MovePreview

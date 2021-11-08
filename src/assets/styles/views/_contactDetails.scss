@@ -1,0 +1,38 @@
+.contact-details {
+    .btn-nav {
+        margin-bottom: 30px;
+        a {
+            padding: 8px;
+            &:hover {
+                background-color: $clr4;
+                color: $clr6;
+            }
+        }
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        object-fit: fill;
+        border-radius: 50%;
+        outline: 2px solid $clr2;
+        margin-bottom: 25px;
+    }
+    .contact-name {
+        color: $clr1;
+        font-weight: 600;
+    }
+    ul li {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    ul {
+        margin-bottom: 35px;
+    }
+    @include for-narrow-layout {
+        img {
+            width: 250px;
+            height: 250px;
+            outline: 4px solid $clr2;
+        }
+    }
+}

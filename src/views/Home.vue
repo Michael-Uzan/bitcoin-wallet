@@ -18,6 +18,7 @@
           <p>$ 1 = ₿ {{ bitCoinRate }}</p>
         </div>
       </section>
+      <hr class="balance-details-hr" />
       <div class="flex space-around">
         <img src="../assets/img/home-image.jpg" />
       </div>

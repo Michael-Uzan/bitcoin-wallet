@@ -1,0 +1,26 @@
+.contact-app {
+    .no-result,
+    h1 {
+        margin-bottom: 600px;
+        text-align: center;
+    }
+    .btn-add-contact {
+        font-size: rem(35px);
+        padding: 5px 20px;
+        width: 65px;
+        height: 65px;
+        background-color: $clr1;
+        border-radius: 50%;
+        text-align: center;
+
+        position: fixed;
+        bottom: 60px;
+        right: 25px;
+        @include for-wide-layout {
+            right: 75px;
+        }
+        @include for-super-wide-layout {
+            right: 100px;
+        }
+    }
+}

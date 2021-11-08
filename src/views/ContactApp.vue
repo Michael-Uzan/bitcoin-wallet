@@ -1,17 +1,15 @@
 <template>
   <section class="contact-app">
-    <h1>
-      Contacts <span v-if="loggedinUser">({{ contactsCount }} contacts)</span>
-    </h1>
     <template v-if="loggedinUser">
-      <RouterLink to="/contact/edit/">Add contact</RouterLink>
-      <ContactFilter @setFilter="setFilter" />
+      <ContactFilter @setFilter="setFilter" :contactsCount="contactsCount" />
       <ContactsList :contacts="contactsToShow" />
-      <h2 v-if="!contactsToShow.length">Sorry, no result for your Search...</h2>
+      <h2 class="no-result" v-if="!contactsToShow.length">
+        Sorry, no result for your Search...
+      </h2>
+      <RouterLink class="btn-add-contact" to="/contact/edit/">+</RouterLink>
     </template>
     <template v-else>
-      <h1>Login to see contacts</h1>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/login"><h1>Login to see contacts</h1></router-link>
     </template>
   </section>
 </template>

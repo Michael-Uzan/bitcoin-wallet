@@ -1,9 +1,9 @@
 <template>
-  <form>
+  <form class="contact-filter">
     <input
       @input="filter"
       type="search"
-      placeholder="Search contact"
+      :placeholder="`Search ${contactsCount} contacts`"
       v-model="filterBy.searchStr"
     />
   </form>
@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  props: ["contactsCount"],
   name: "ContactFilter",
   data() {
     return {

@@ -1,0 +1,32 @@
+.lottery {
+    h1 {
+        text-align: center;
+        color: $clr6;
+        margin-bottom: 35px;
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    .lottery-settings {
+        input {
+            margin-bottom: 10px;
+            width: 100px;
+        }
+        h4 {
+            margin-bottom: 25px;
+            span {
+                color: $clr6;
+                font-weight: 800;
+            }
+        }
+        a {
+            font-size: rem(12px);
+            text-decoration: underline;
+            margin-top: 20px;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        margin-bottom: 35px;
+    }
+}

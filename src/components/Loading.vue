@@ -1,5 +1,7 @@
 <template>
-  <img src="@/assets/img/loading.gif" />
+  <section class="loading tac">
+    <img class="loding-svg" src="@/assets/img/loading.gif" />
+  </section>
 </template>
 
 <script>

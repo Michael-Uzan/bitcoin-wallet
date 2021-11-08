@@ -15,15 +15,22 @@
 @import "cmps/appFotter";
 @import "cmps/lotteryMovePreview";
 @import "cmps/lottery/lottery-nums";
+@import "cmps/lottery/numPicker";
+@import "cmps/lottery/winLoseModal";
 @import "cmps/userMsg";
 @import "cmps/movePreview";
 @import "cmps/contactFilter";
 @import "cmps/contactPreview";
 @import "cmps/transferCoins";
-// @import "cmps/loading";
+@import "cmps/loading";
 
 // Views (pages)
 @import "views/home";
 @import "views/contactApp";
 @import "views/contactDetails";
 @import "views/contactEdit";
+@import "views/dashboard";
+@import "views/userDetails";
+@import "views/userEdit";
+@import "views/login";
+@import "views/lottery";

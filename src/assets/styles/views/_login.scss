@@ -1,0 +1,23 @@
+.login-signup {
+    h1 {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    form {
+        margin-bottom: 35px;
+        input {
+            margin-bottom: 10px;
+        }
+        button {
+            width: 90px;
+            align-self: end;
+        }
+    }
+    a {
+        text-decoration: underline;
+        margin-bottom: 400px;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}

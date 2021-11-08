@@ -1,11 +1,19 @@
 <template>
   <section class="user-details">
     <template v-if="user">
-      <h1>User Details</h1>
-      <router-link :to="`/user/edit/${loggedinUser._id}`">Edit</router-link>
-      <p>Name : {{ user.name }}</p>
-      <p>Email : {{ user.email }}</p>
-      <p>Balance : {{ userBalance }} ₿</p>
+      <section class="content-countainer">
+        <div class="btn-nav flex space-between">
+          <router-link :to="`/`"> Back </router-link>
+          <router-link :to="`/user/edit/${loggedinUser._id}`">Edit</router-link>
+        </div>
+        <section class="details">
+          <h1 class="tac">{{ user.name }}</h1>
+          <ul class="clean-list">
+            <li>Email : {{ user.email }}</li>
+            <li>Balance : ₿ {{ userBalance }}</li>
+          </ul>
+        </section>
+      </section>
     </template>
     <template v-else>
       <Loading></Loading>

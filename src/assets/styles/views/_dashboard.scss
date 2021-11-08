@@ -1,0 +1,38 @@
+.dasboard {
+    text-align: center;
+    h3 {
+        color: $clr1;
+        font-size: rem(22px);
+    }
+    p {
+        color: $fontColor2;
+    }
+    .chart1 {
+        margin-bottom: 35px;
+    }
+    .chart2 {
+        margin-bottom: 65px;
+    }
+    #line-chart,
+    #bar-chart {
+        display: grid;
+        place-content: center;
+        @include for-mobile-layout {
+            max-width: 300px;
+        }
+        @include for-narrow-layout {
+            max-width: 500px;
+        }
+        @include for-normal-layout {
+            max-width: 700px;
+        }
+        @include for-wide-layout {
+            max-width: 900px;
+            margin-left: 50px;
+        }
+        @include for-super-wide-layout {
+            max-width: 1100px;
+            margin-left: 140px;
+        }
+    }
+}

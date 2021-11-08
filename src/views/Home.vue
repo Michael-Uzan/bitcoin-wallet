@@ -22,6 +22,9 @@
       <div class="flex space-around">
         <img src="../assets/img/home-image.jpg" />
       </div>
+      <router-link class="lottery-link" to="/lottery"
+        >Lets play Lottery!</router-link
+      >
       <div
         class="transfer-details"
         v-if="loggedinUser && loggedinUser.moves.length"

@@ -11,7 +11,7 @@
       />
       <button>Transfer</button>
     </form>
-    <div>Your Current Balance: {{ loggedinUser.coins }} BITs</div>
+    <div>Your Current Balance: {{ loggedinUser.coins.toFixed(2) }} BITs</div>
   </section>
 </template>
 

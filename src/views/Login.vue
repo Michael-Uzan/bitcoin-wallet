@@ -1,6 +1,6 @@
 <template>
-  <section class="login-signup">
-    <form @submit.prevent="login">
+  <section class="login-signup flex direction-col align-center">
+    <form @submit.prevent="login" class="flex direction-col">
       <h1>login</h1>
       <input v-model="creds.email" type="text" placeholder="Email" required />
       <input
@@ -11,7 +11,7 @@
       />
       <button>Login</button>
     </form>
-    <router-link to="/signup">Signup</router-link>
+    <router-link to="/signup">Signup?</router-link>
   </section>
 </template>
 

@@ -1,7 +1,14 @@
 <template>
   <section class="lottery-nums">
-    <div v-for="(num, idx) in winningNums" :key="num">
-      <div :class="`num ${showNums[idx]} ${winningClass(num)}`">
+    <div
+      v-for="(num, idx) in winningNums"
+      :key="num"
+      class="flex align-center justify-center"
+    >
+      <div
+        :class="`num ${showNums[idx]} ${showResult && winningClass(num)}`"
+        class="flex align-center justify-center"
+      >
         {{ num }}
       </div>
     </div>
@@ -14,6 +21,7 @@ export default {
   data() {
     return {
       showNums: Array(this.winLen).fill(""),
+      showResult: false,
     };
   },
   mounted() {
@@ -23,6 +31,9 @@ export default {
         this.showNums = [...this.showNums];
       }, 800 * i);
     }
+    setTimeout(() => {
+      this.showResult = true;
+    }, 4000);
   },
   computed: {
     winLen() {

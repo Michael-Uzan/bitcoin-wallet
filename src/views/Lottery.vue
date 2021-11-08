@@ -1,26 +1,33 @@
 <template>
   <section class="lottery">
     <h1>Lets play lottery!</h1>
+    <p class="tac">Choose a number and set your amount:</p>
     <NumPicker @chooseNum="setNum" :chosenNum="chosenNum" />
-    <div>
+    <section class="lottery-settings flex direction-col align-center">
       <div>
-        <label for="amount">Amount: </label>
-        <input
-          type="number"
-          :placeholder="`Amount ₿`"
-          v-model.number="amount"
-          id="amount"
-          min="0.1"
-          :disabled="isGameStarted || !loggedinUser"
-          required
-        />
+        <div>
+          <label for="amount">Amount: </label>
+          <input
+            type="number"
+            :placeholder="`Amount ₿`"
+            v-model.number="amount"
+            id="amount"
+            min="0.1"
+            :disabled="isGameStarted || !loggedinUser"
+            required
+          />
+        </div>
       </div>
-    </div>
-    <span> Your Lucky number: {{ chosenNum }} </span>
-    <button :disabled="isGameStarted || !loggedinUser" @click="startLottery">
-      Start playing
-    </button>
-    <router-link to="/login" v-if="!loggedinUser">* login to play</router-link>
+      <h4>
+        Your Lucky number: <span> {{ chosenNum }}</span>
+      </h4>
+      <button :disabled="isGameStarted || !loggedinUser" @click="startLottery">
+        Start playing
+      </button>
+      <router-link to="/login" v-if="!loggedinUser"
+        >* login to play</router-link
+      >
+    </section>
     <LotteryNums
       v-if="isGameStarted"
       :winningNums="winningNums"
@@ -55,7 +62,7 @@ export default {
     };
   },
   created() {
-    this.winningNums = utilService.getRandomArray().splice(0, 6);
+    this.winningNums = utilService.getRandomArray().splice(0, 5);
   },
   methods: {
     setNum(num) {
@@ -83,7 +90,7 @@ export default {
     onShowGameModal() {
       setTimeout(() => {
         this.showGameModal = true;
-      }, 5000);
+      }, 4000);
     },
     checkVictory() {
       return this.winningNums.some(
@@ -91,7 +98,7 @@ export default {
       );
     },
     restartGame() {
-      this.winningNums = utilService.getRandomArray().splice(0, 6);
+      this.winningNums = utilService.getRandomArray().splice(0, 5);
       this.isGameStarted = false;
       this.showGameModal = false;
       this.isWin = null;

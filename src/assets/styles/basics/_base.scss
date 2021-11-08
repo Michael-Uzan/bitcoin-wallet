@@ -22,6 +22,10 @@ input {
     background-color: $clr4;
     border: 0;
     font-weight: 500;
+    &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
 }
 
 input::placeholder {

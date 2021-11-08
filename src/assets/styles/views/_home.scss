@@ -19,4 +19,16 @@
         max-width: 450px;
         border-radius: 15px;
     }
+    .lottery-link {
+        display: grid;
+        place-content: center;
+        text-decoration: underline;
+        font-size: rem(20px);
+        margin-bottom: 35px;
+        color: $clr6;
+        &:hover {
+            opacity: 0.6;
+            text-decoration: none;
+        }
+    }
 }

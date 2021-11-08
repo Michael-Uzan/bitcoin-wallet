@@ -1,0 +1,26 @@
+.user-details {
+    .content-countainer {
+        margin-bottom: 460px;
+        .btn-nav {
+            margin-bottom: 30px;
+            a {
+                padding: 8px;
+                &:hover {
+                    background-color: $clr4;
+                    color: $clr6;
+                }
+            }
+        }
+        h1 {
+            margin-bottom: 35px;
+            font-size: rem(25px);
+        }
+        ul li {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        ul {
+            margin-bottom: 35px;
+        }
+    }
+}

@@ -1,32 +1,38 @@
 <template>
   <section class="user-edit">
     <template v-if="user">
-      <h1>Edit user</h1>
-      <form v-if="user" @submit.prevent="save" class="flex column align-center">
-        <div>
-          <label for="name">Name: </label>
-          <input type="text" id="name" v-model="user.name" placeholder="Name" />
-        </div>
-        <div>
-          <label for="email">Email: </label>
-          <input
-            type="text"
-            id="email"
-            v-model="user.email"
-            placeholder="email"
-          />
-        </div>
-        <div>
-          <label for="pass">Password: </label>
-          <input
-            type="password"
-            id="pass"
-            v-model="user.password"
-            placeholder="Pass"
-          />
-        </div>
-        <button>Save</button>
-      </form>
+      <div class="btn-nav flex space-between">
+        <router-link :to="`/user/${loggedinUser._id}`"> Back </router-link>
+      </div>
+      <section class="flex align-center direction-col">
+        <form v-if="user" @submit.prevent="save" class="flex direction-col">
+          <div>
+            <input
+              type="text"
+              id="name"
+              v-model="user.name"
+              placeholder="Name"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              id="email"
+              v-model="user.email"
+              placeholder="email"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              id="pass"
+              v-model="user.password"
+              placeholder="Pass"
+            />
+          </div>
+          <button>Save</button>
+        </form>
+      </section>
     </template>
     <template v-else>
       <Loading></Loading>

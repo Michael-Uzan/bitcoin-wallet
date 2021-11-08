@@ -1,0 +1,25 @@
+.win-lose-modal {
+    position: fixed;
+    top: 150px;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: white;
+    color: $bgcColor;
+    outline: 5px solid $clr2;
+    // background-color: #111;
+    padding: 50px;
+    border-radius: 15px;
+    h4 {
+        margin-bottom: 25px;
+        font-size: rem(14px);
+        @include for-normal-layout {
+            font-size: rem(22px);
+        }
+    }
+    button {
+        font-size: rem(14px);
+        @include for-normal-layout {
+            font-size: rem(18px);
+        }
+    }
+}

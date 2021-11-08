@@ -1,12 +1,11 @@
 <template>
   <section class="dasboard">
-    <h1>Dashboard</h1>
-    <div>
+    <div class="chart1">
       <h3>Market Price over time (USD)</h3>
       <ChartLineMatketPrice :chartData="chartDataMarket" />
       <p>Average USD market price across major bitcoin exchanges.</p>
     </div>
-    <div>
+    <div class="chart2">
       <h3>Trade Volume (USD)</h3>
       <ChartBarTradeVolume :chartData="chartDataTrade" />
       <p>The total USD value of trading volume on major bitcoin exchanges.</p>

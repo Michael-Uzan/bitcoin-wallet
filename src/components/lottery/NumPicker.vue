@@ -1,7 +1,11 @@
 <template>
   <section class="num-picker">
     <div v-for="num in nums" :key="num">
-      <div @click="$emit('chooseNum', num)" :class="chosenNumClass(num)">
+      <div
+        @click="$emit('chooseNum', num)"
+        :class="chosenNumClass(num)"
+        class="num"
+      >
         {{ num }}
       </div>
     </div>

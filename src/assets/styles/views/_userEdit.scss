@@ -1,0 +1,25 @@
+.user-edit {
+    .btn-nav {
+        margin-bottom: 30px;
+        a {
+            padding: 8px;
+            &:hover {
+                background-color: $clr4;
+                color: $clr6;
+            }
+        }
+    }
+    form {
+        margin-bottom: 400px;
+        div {
+            margin-bottom: 15px;
+            label {
+                margin-right: 15px;
+            }
+        }
+        button {
+            width: 90px;
+            align-self: end;
+        }
+    }
+}

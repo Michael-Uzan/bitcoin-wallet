@@ -13,6 +13,7 @@
             v-model.number="amount"
             id="amount"
             min="0.1"
+            step="0.1"
             :disabled="isGameStarted || !loggedinUser"
             required
           />
@@ -72,6 +73,9 @@ export default {
     startLottery() {
       if (this.amount > this.loggedinUser.coins) {
         showUserMsg("not enough coins!", "danger");
+        return;
+      } else if (this.amount <= 0) {
+        showUserMsg("must be positive!", "danger");
         return;
       }
       if (this.checkVictory()) {

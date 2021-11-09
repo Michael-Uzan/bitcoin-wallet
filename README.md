@@ -34,6 +34,14 @@ You can transfer money to your friends and play the lottery to earn more Bitcoin
 </p>
 
 
+<img align="left" src="https://res.cloudinary.com/looply/image/upload/v1636455469/aa_hc7cg5.jpg"  />
+
+<img align="center" src="https://res.cloudinary.com/looply/image/upload/v1636455469/a_hzoca6.jpg"  />
+
+<img align="left" src="https://res.cloudinary.com/looply/image/upload/v1636455469/bb_x6elf1.jpg"  />
+
+<img align="center" src="https://res.cloudinary.com/looply/image/upload/v1636455690/ddd_cjw1wm.jpg"  />
+
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=michael-uzan&show_icons=true&locale=en&layout=compact" alt="michael-uzan" /></p>
 
